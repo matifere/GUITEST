@@ -14,6 +14,9 @@ using System.Net.Http;
 using System.Drawing;
 using static Google.Rpc.Context.AttributeContext.Types;
 using System.Security.Cryptography.X509Certificates;
+using Svg;
+using System.IO;
+using System.Diagnostics;
 
 namespace GUI
 {
@@ -28,8 +31,31 @@ namespace GUI
             InitializeComponent();
             
             InitializeFirestore();
+            string appDirectory = AppDomain.CurrentDomain.BaseDirectory;
 
+            
+            string svgFileName = "xmark.svg";
+            string svgPath = Path.Combine(appDirectory, "imagenes", svgFileName);
+            Console.WriteLine(svgPath);
+            ShowSvgImage(svgPath);
         }
+
+        private void ShowSvgImage(string svgPath)
+        {
+            try
+            {
+                var svgDocument = SvgDocument.Open(svgPath);
+
+                var bitmap = svgDocument.Draw();
+
+                Cross.Image = bitmap;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar la imagen SVG: {ex.Message}");
+            }
+        }
+        
         private void InitializeFirestore()
         {
             firestoreDb = FirestoreDb.Create("guiexp"); // Reemplaza "YOUR_PROJECT_ID" con tu ID de proyecto de Firebase
@@ -153,6 +179,11 @@ namespace GUI
         private void Menu_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Cross_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
