@@ -67,14 +67,7 @@ namespace GUI
 
         }
 
-        private void SaveButton_Click(object sender, EventArgs e)
-        {
-            labelText = LabelDataSave.Text;
-            dataText = DataDataSave.Text;
-            //MessageBox.Show(labelText, dataText);
-            DataList.Items.Add(labelText, dataText);
-        }
-
+        
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 

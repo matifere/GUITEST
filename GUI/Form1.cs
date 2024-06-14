@@ -31,31 +31,68 @@ namespace GUI
             InitializeComponent();
             
             InitializeFirestore();
-            string appDirectory = AppDomain.CurrentDomain.BaseDirectory;
 
-            
-            string svgFileName = "xmark.svg";
-            string svgPath = Path.Combine(appDirectory, "imagenes", svgFileName);
-            Console.WriteLine(svgPath);
-            ShowSvgImage(svgPath);
+            ShowSvgImage("cat-solid", CatPic);
+            //ShowSvgImage("right-from-bracket-solid", LogOutPic);
+            //ShowSvgImage("google", LogInPic);
+            //ShowSvgImageInBtn("google", buttonLogin);
+            //ShowSvgImageInBtn("right-from-bracket-solid", buttonLogout);
+
+
         }
 
-        private void ShowSvgImage(string svgPath)
+
+
+        private void ShowSvgImage(string name, PictureBox imagen)
         {
+            string appDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string svgPath = Path.Combine(appDirectory, "imagenes", name + ".svg");
             try
             {
                 var svgDocument = SvgDocument.Open(svgPath);
 
                 var bitmap = svgDocument.Draw();
 
-                Cross.Image = bitmap;
+                imagen.Image = bitmap;
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error al cargar la imagen SVG: {ex.Message}");
             }
         }
-        
+        //private void ShowSvgImageInBtn(string name, Button boton)
+        //{
+        //    string appDirectory = AppDomain.CurrentDomain.BaseDirectory;
+        //    string svgPath = Path.Combine(appDirectory, "imagenes", name + ".svg");
+        //    try
+        //    {
+        //        var svgDocument = SvgDocument.Open(svgPath);
+
+        //        var bitmap = svgDocument.Draw();
+
+        //        ResizeImage(bitmap, boton.Height, boton.Height);
+
+        //        boton.Image = bitmap;
+                
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show($"Error al cargar la imagen SVG: {ex.Message}");
+        //    }
+        //}
+
+        //private Bitmap ResizeImage(Image image, int newWidth, int newHeight)
+        //{
+        //    Bitmap resizedImage = new Bitmap(newWidth, newHeight);
+        //    using (Graphics g = Graphics.FromImage(resizedImage))
+        //    {
+        //        g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+        //        g.DrawImage(image, 0, 0, newWidth, newHeight);
+        //    }
+
+        //    return resizedImage;
+        //}
+
         private void InitializeFirestore()
         {
             firestoreDb = FirestoreDb.Create("guiexp"); // Reemplaza "YOUR_PROJECT_ID" con tu ID de proyecto de Firebase
@@ -104,8 +141,13 @@ namespace GUI
                 if (userInfo != null)
                 {
                     // Actualizar etiquetas con información del usuario
-                    labelName.Text = $"Name: {userInfo.Name}";
-                    labelEmail.Text = $"Email: {userInfo.Email}";
+                    labelName.Text = $"{userInfo.Name}";
+                    labelEmail.Text = $"{userInfo.Email}";
+
+                    //centrar el texto
+                    labelName.Left = (this.ClientSize.Width - labelName.Width) / 2;
+                    labelEmail.Left = (this.ClientSize.Width - labelEmail.Width) / 2;
+
 
                     await LoadProfileImageAsync(userInfo.Picture);
                     // Guardar información del usuario en Firestore
