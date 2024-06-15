@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class Form2
+    partial class Main
     {
         /// <summary>
         /// Required designer variable.
@@ -28,159 +28,142 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            this.Imagen = new System.Windows.Forms.PictureBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.labelEmail = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.buttonBckMenu = new System.Windows.Forms.Button();
             this.PanelSideMenu = new System.Windows.Forms.Panel();
-            this.PanelLogData = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.BtnHome = new System.Windows.Forms.Button();
-            this.PanelHomeSubmenu = new System.Windows.Forms.Panel();
-            this.AboutBtn = new System.Windows.Forms.Button();
-            this.SettingsBtn = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.Imagen)).BeginInit();
+            this.PanelLogData = new System.Windows.Forms.Panel();
+            this.Imagen = new System.Windows.Forms.PictureBox();
+            this.TitlePanel = new System.Windows.Forms.Panel();
+            this.TitleLabel = new System.Windows.Forms.Label();
             this.PanelSideMenu.SuspendLayout();
             this.PanelLogData.SuspendLayout();
-            this.PanelHomeSubmenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Imagen)).BeginInit();
+            this.TitlePanel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // Imagen
-            // 
-            this.Imagen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Imagen.BackgroundImage")));
-            this.Imagen.Image = ((System.Drawing.Image)(resources.GetObject("Imagen.Image")));
-            this.Imagen.Location = new System.Drawing.Point(3, 12);
-            this.Imagen.Name = "Imagen";
-            this.Imagen.Size = new System.Drawing.Size(52, 54);
-            this.Imagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Imagen.TabIndex = 9;
-            this.Imagen.TabStop = false;
             // 
             // labelEmail
             // 
-            this.labelEmail.AutoSize = true;
-            this.labelEmail.Location = new System.Drawing.Point(61, 25);
+            resources.ApplyResources(this.labelEmail, "labelEmail");
+            this.labelEmail.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Size = new System.Drawing.Size(32, 13);
-            this.labelEmail.TabIndex = 8;
-            this.labelEmail.Text = "Email";
             // 
             // labelName
             // 
-            this.labelName.AutoSize = true;
-            this.labelName.Location = new System.Drawing.Point(61, 12);
+            resources.ApplyResources(this.labelName, "labelName");
+            this.labelName.ForeColor = System.Drawing.SystemColors.Control;
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(35, 13);
-            this.labelName.TabIndex = 7;
-            this.labelName.Text = "Name";
             // 
             // buttonBckMenu
             // 
-            this.buttonBckMenu.Location = new System.Drawing.Point(61, 41);
+            this.buttonBckMenu.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.buttonBckMenu, "buttonBckMenu");
+            this.buttonBckMenu.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.buttonBckMenu.Name = "buttonBckMenu";
-            this.buttonBckMenu.Size = new System.Drawing.Size(81, 25);
-            this.buttonBckMenu.TabIndex = 10;
-            this.buttonBckMenu.Text = "Back to menu";
             this.buttonBckMenu.UseVisualStyleBackColor = true;
             this.buttonBckMenu.Click += new System.EventHandler(this.buttonLogout_Click);
             // 
             // PanelSideMenu
             // 
-            this.PanelSideMenu.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.PanelSideMenu.Controls.Add(this.PanelHomeSubmenu);
+            this.PanelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(64)))), ((int)(((byte)(63)))));
+            this.PanelSideMenu.Controls.Add(this.button3);
+            this.PanelSideMenu.Controls.Add(this.button2);
+            this.PanelSideMenu.Controls.Add(this.button1);
             this.PanelSideMenu.Controls.Add(this.BtnHome);
             this.PanelSideMenu.Controls.Add(this.PanelLogData);
-            this.PanelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.PanelSideMenu.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.PanelSideMenu, "PanelSideMenu");
             this.PanelSideMenu.Name = "PanelSideMenu";
-            this.PanelSideMenu.Size = new System.Drawing.Size(168, 540);
-            this.PanelSideMenu.TabIndex = 11;
+            // 
+            // button3
+            // 
+            resources.ApplyResources(this.button3, "button3");
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.ForeColor = System.Drawing.SystemColors.Control;
+            this.button3.Image = global::GUI.Properties.Resources.database_solid;
+            this.button3.Name = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            resources.ApplyResources(this.button2, "button2");
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.ForeColor = System.Drawing.SystemColors.Control;
+            this.button2.Image = global::GUI.Properties.Resources.clipboard_solid;
+            this.button2.Name = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.ForeColor = System.Drawing.SystemColors.Control;
+            this.button1.Image = global::GUI.Properties.Resources.gear;
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // BtnHome
+            // 
+            resources.ApplyResources(this.BtnHome, "BtnHome");
+            this.BtnHome.FlatAppearance.BorderSize = 0;
+            this.BtnHome.ForeColor = System.Drawing.SystemColors.Control;
+            this.BtnHome.Image = global::GUI.Properties.Resources.house;
+            this.BtnHome.Name = "BtnHome";
+            this.BtnHome.UseVisualStyleBackColor = true;
+            this.BtnHome.Click += new System.EventHandler(this.BtnHome_Click);
             // 
             // PanelLogData
             // 
+            this.PanelLogData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.PanelLogData.Controls.Add(this.Imagen);
             this.PanelLogData.Controls.Add(this.buttonBckMenu);
             this.PanelLogData.Controls.Add(this.labelName);
             this.PanelLogData.Controls.Add(this.labelEmail);
-            this.PanelLogData.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelLogData.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.PanelLogData, "PanelLogData");
             this.PanelLogData.Name = "PanelLogData";
-            this.PanelLogData.Size = new System.Drawing.Size(168, 73);
-            this.PanelLogData.TabIndex = 0;
             // 
-            // BtnHome
+            // Imagen
             // 
-            this.BtnHome.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnHome.FlatAppearance.BorderSize = 0;
-            this.BtnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnHome.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnHome.Location = new System.Drawing.Point(0, 73);
-            this.BtnHome.Name = "BtnHome";
-            this.BtnHome.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.BtnHome.Size = new System.Drawing.Size(168, 45);
-            this.BtnHome.TabIndex = 1;
-            this.BtnHome.Text = "Home";
-            this.BtnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnHome.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.Imagen, "Imagen");
+            this.Imagen.Name = "Imagen";
+            this.Imagen.TabStop = false;
             // 
-            // PanelHomeSubmenu
+            // TitlePanel
             // 
-            this.PanelHomeSubmenu.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.PanelHomeSubmenu.Controls.Add(this.SettingsBtn);
-            this.PanelHomeSubmenu.Controls.Add(this.AboutBtn);
-            this.PanelHomeSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelHomeSubmenu.Location = new System.Drawing.Point(0, 118);
-            this.PanelHomeSubmenu.Name = "PanelHomeSubmenu";
-            this.PanelHomeSubmenu.Size = new System.Drawing.Size(168, 50);
-            this.PanelHomeSubmenu.TabIndex = 2;
+            this.TitlePanel.BackColor = System.Drawing.SystemColors.Highlight;
+            this.TitlePanel.Controls.Add(this.TitleLabel);
+            resources.ApplyResources(this.TitlePanel, "TitlePanel");
+            this.TitlePanel.Name = "TitlePanel";
             // 
-            // AboutBtn
+            // TitleLabel
             // 
-            this.AboutBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.AboutBtn.FlatAppearance.BorderSize = 0;
-            this.AboutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AboutBtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.AboutBtn.Location = new System.Drawing.Point(0, 0);
-            this.AboutBtn.Name = "AboutBtn";
-            this.AboutBtn.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.AboutBtn.Size = new System.Drawing.Size(168, 23);
-            this.AboutBtn.TabIndex = 0;
-            this.AboutBtn.Text = "About";
-            this.AboutBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AboutBtn.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.TitleLabel, "TitleLabel");
+            this.TitleLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.TitleLabel.Name = "TitleLabel";
+            this.TitleLabel.Click += new System.EventHandler(this.TitleLabel_Click);
             // 
-            // SettingsBtn
+            // Main
             // 
-            this.SettingsBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SettingsBtn.FlatAppearance.BorderSize = 0;
-            this.SettingsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SettingsBtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.SettingsBtn.Location = new System.Drawing.Point(0, 23);
-            this.SettingsBtn.Name = "SettingsBtn";
-            this.SettingsBtn.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.SettingsBtn.Size = new System.Drawing.Size(168, 23);
-            this.SettingsBtn.TabIndex = 2;
-            this.SettingsBtn.Text = "Settings";
-            this.SettingsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SettingsBtn.UseVisualStyleBackColor = true;
-            // 
-            // Form2
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.ClientSize = new System.Drawing.Size(960, 540);
+            this.Controls.Add(this.TitlePanel);
             this.Controls.Add(this.PanelSideMenu);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "Form2";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form2";
+            this.Name = "Main";
             this.Load += new System.EventHandler(this.Form2_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.Imagen)).EndInit();
             this.PanelSideMenu.ResumeLayout(false);
             this.PanelLogData.ResumeLayout(false);
             this.PanelLogData.PerformLayout();
-            this.PanelHomeSubmenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Imagen)).EndInit();
+            this.TitlePanel.ResumeLayout(false);
+            this.TitlePanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -193,9 +176,11 @@
         private System.Windows.Forms.Button buttonBckMenu;
         private System.Windows.Forms.Panel PanelSideMenu;
         private System.Windows.Forms.Panel PanelLogData;
-        private System.Windows.Forms.Panel PanelHomeSubmenu;
         private System.Windows.Forms.Button BtnHome;
-        private System.Windows.Forms.Button SettingsBtn;
-        private System.Windows.Forms.Button AboutBtn;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Panel TitlePanel;
+        private System.Windows.Forms.Label TitleLabel;
     }
 }

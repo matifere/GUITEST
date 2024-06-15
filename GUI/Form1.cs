@@ -153,7 +153,7 @@ namespace GUI
                     // Guardar información del usuario en Firestore
                     await SaveUserToFirestore(userInfo);
 
-                    Form2 form2 = new Form2(this, userInfo.Name, userInfo.Email, userInfo.Picture);
+                    Main form2 = new Main(this, userInfo.Name, userInfo.Email, userInfo.Picture);
                     form2.Show();
                     this.Hide();
                 }

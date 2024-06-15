@@ -11,13 +11,17 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class Form2 : Form
+    public partial class Main : Form
     {
+        //campos
         private Menu form1;
-        private string labelText;
-        private string dataText;
 
-        public Form2(Menu form1 ,string name, string email, string pictureUrl)
+        private Button currentButton;
+        private Random random;
+        private int tempIndex;
+
+
+        public Main(Menu form1 ,string name, string email, string pictureUrl)
         {
             InitializeComponent();
             this.form1 = form1;
@@ -25,7 +29,17 @@ namespace GUI
             labelName.Text = name;
             labelEmail.Text = email;
             LoadProfileImage(pictureUrl);
+            random = new Random();
         }
+
+        protected override void OnResize(EventArgs e)
+        {
+            TitleLabel.Left = ((this.ClientSize.Width - TitleLabel.Width - PanelSideMenu.Width) / 2) ;
+
+            base.OnResize(e);
+        }
+        //protected override void 
+
         private async void LoadProfileImage(string imageUrl)
         {
             using (HttpClient client = new HttpClient())
@@ -45,13 +59,51 @@ namespace GUI
 
         private void buttonLogout_Click(object sender, EventArgs e)
         {
-            if (form1 != null)
-            {
-                form1.Show();
-            }
+            form1?.Show();
             this.Close();
         }
 
+        private Color SelectThemeColor()
+        {
+            int index = random.Next(ThemeColor.ColorList.Count);
+            while(tempIndex == index)
+            {
+                index = random.Next(ThemeColor.ColorList.Count);
+            }
+            tempIndex = index;
+            string color = ThemeColor.ColorList[index];
+            return ColorTranslator.FromHtml(color);
+        }
+
+        private void ActiveButton(object btnSender)
+        {
+            if(btnSender != null)
+            {
+                if (currentButton != (Button)btnSender)
+                {
+                    DisableButton();
+                    Color color = SelectThemeColor();
+                    currentButton = (Button)btnSender;
+                    currentButton.BackColor = color;
+                    currentButton.ForeColor = Color.White; //ojo con esto si queres poner colores claros
+                }
+            }
+            
+        }
+        private void DisableButton()
+        {
+            foreach (Control previousBtn in PanelSideMenu.Controls)
+            {
+                if (previousBtn.GetType() == typeof(Button))
+                {
+                    previousBtn.BackColor = Color.FromArgb(63, 64, 63);
+                    previousBtn.ForeColor = Color.White;
+
+                }
+            }
+        }
+
+        #region nonuse
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -74,6 +126,35 @@ namespace GUI
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        #endregion nonuse
+
+        private void BtnHome_Click(object sender, EventArgs e)
+        {
+            ActiveButton(sender);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ActiveButton(sender);
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ActiveButton(sender);
+
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ActiveButton(sender);
+        }
+
+        private void TitleLabel_Click(object sender, EventArgs e)
         {
 
         }
