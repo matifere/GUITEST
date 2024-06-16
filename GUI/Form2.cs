@@ -17,8 +17,9 @@ namespace GUI
         private Menu form1;
 
         private Button currentButton;
-        private Random random;
-        private int tempIndex;
+        //private Random random;
+        //private int tempIndex;
+        private Form activeForm;
 
 
         public Main(Menu form1 ,string name, string email, string pictureUrl)
@@ -29,7 +30,7 @@ namespace GUI
             labelName.Text = name;
             labelEmail.Text = email;
             LoadProfileImage(pictureUrl);
-            random = new Random();
+            //random = new Random();
         }
 
         //Mantener texto centrado
@@ -74,32 +75,47 @@ namespace GUI
         private void buttonLogout_Click(object sender, EventArgs e)
         {
             form1?.Show();
-            this.Close();
+            this.Hide();
         }
 
-        private Color SelectThemeColor()
+        public Color SelectThemeColor(int colorIndex) //lo que está comentado es para poner el color en aleatorio
         {
-            int index = random.Next(ThemeColor.ColorList.Count);
-            while(tempIndex == index)
-            {
-                index = random.Next(ThemeColor.ColorList.Count);
-            }
-            tempIndex = index;
-            string color = ThemeColor.ColorList[index];
+            //int index = random.Next(ThemeColor.ColorList.Count);
+            //while(tempIndex == index)
+            //{
+            //    index = random.Next(ThemeColor.ColorList.Count);
+            //}
+            //tempIndex = index;
+            string color = ThemeColor.ColorList[colorIndex];
             return ColorTranslator.FromHtml(color);
         }
 
-        private void ActiveButton(object btnSender)
+        //para respetar el color vamos a usar mod 4
+        public int SelectMod(int cociente, int resto)
+        {
+            if (cociente > ThemeColor.ColorList.Count)
+            {
+                return 0;
+            }
+            else
+            {
+                return (cociente * 4) + resto;
+            }
+        }
+
+        private void ActiveButton(object btnSender, int colorCociente, int colorResto)
         {
             if(btnSender != null)
             {
                 if (currentButton != (Button)btnSender)
                 {
                     DisableButton();
-                    Color color = SelectThemeColor();
+                    Color color = SelectThemeColor(SelectMod(colorCociente, colorResto));
                     currentButton = (Button)btnSender;
                     currentButton.BackColor = color;
                     currentButton.ForeColor = Color.White; //ojo con esto si queres poner colores claros
+                    TitlePanel.BackColor = color;
+                    PanelLogData.BackColor = ThemeColor.ChangeColorBrightness(color, -0.3);
                 }
             }
             
@@ -115,6 +131,24 @@ namespace GUI
 
                 }
             }
+        }
+
+        private void OpenChildForm(Form childForm, Object btnSender, int colorCociente, int colorResto)
+        {
+            if(activeForm !=  null)
+            {
+                activeForm.Close();
+            }
+            ActiveButton(btnSender, colorCociente, colorResto);
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None; //le sacamos los bordes al form hijo
+            childForm.Dock = DockStyle.Fill; //hacemos que llene el panel
+            this.FormShow.Controls.Add(childForm); //agrego el control del childform
+            this.FormShow.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show(); //muestro el form en el panel
+            TitleLabel.Text = childForm.Text; //cambiar el nombre del titulo (el del panel de arriba)
         }
 
         #region nonuse
@@ -147,25 +181,27 @@ namespace GUI
 
         private void BtnHome_Click(object sender, EventArgs e)
         {
-            ActiveButton(sender);
+            OpenChildForm(new Forms.Home(0), sender, 2, 0); // cambia el primer entero para seguir dentro de la misma paleta
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ActiveButton(sender);
+            OpenChildForm(new Forms.Settings(), sender, 3, 1);
+
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ActiveButton(sender);
+            OpenChildForm(new Forms.Notes(), sender, 3, 2);
+
 
 
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            ActiveButton(sender);
+            OpenChildForm(new Forms.Data(), sender, 3, 3);
         }
 
         private void TitleLabel_Click(object sender, EventArgs e)

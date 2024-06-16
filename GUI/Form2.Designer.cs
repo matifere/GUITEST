@@ -33,18 +33,19 @@
             this.labelName = new System.Windows.Forms.Label();
             this.buttonBckMenu = new System.Windows.Forms.Button();
             this.PanelSideMenu = new System.Windows.Forms.Panel();
+            this.PanelLogData = new System.Windows.Forms.Panel();
+            this.TitlePanel = new System.Windows.Forms.Panel();
+            this.TitleLabel = new System.Windows.Forms.Label();
+            this.FormShow = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.BtnHome = new System.Windows.Forms.Button();
-            this.PanelLogData = new System.Windows.Forms.Panel();
             this.Imagen = new System.Windows.Forms.PictureBox();
-            this.TitlePanel = new System.Windows.Forms.Panel();
-            this.TitleLabel = new System.Windows.Forms.Label();
             this.PanelSideMenu.SuspendLayout();
             this.PanelLogData.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Imagen)).BeginInit();
             this.TitlePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Imagen)).BeginInit();
             this.SuspendLayout();
             // 
             // labelEmail
@@ -78,6 +79,35 @@
             this.PanelSideMenu.Controls.Add(this.PanelLogData);
             resources.ApplyResources(this.PanelSideMenu, "PanelSideMenu");
             this.PanelSideMenu.Name = "PanelSideMenu";
+            // 
+            // PanelLogData
+            // 
+            this.PanelLogData.BackColor = System.Drawing.Color.RoyalBlue;
+            this.PanelLogData.Controls.Add(this.Imagen);
+            this.PanelLogData.Controls.Add(this.buttonBckMenu);
+            this.PanelLogData.Controls.Add(this.labelName);
+            this.PanelLogData.Controls.Add(this.labelEmail);
+            resources.ApplyResources(this.PanelLogData, "PanelLogData");
+            this.PanelLogData.Name = "PanelLogData";
+            // 
+            // TitlePanel
+            // 
+            this.TitlePanel.BackColor = System.Drawing.SystemColors.Highlight;
+            this.TitlePanel.Controls.Add(this.TitleLabel);
+            resources.ApplyResources(this.TitlePanel, "TitlePanel");
+            this.TitlePanel.Name = "TitlePanel";
+            // 
+            // TitleLabel
+            // 
+            resources.ApplyResources(this.TitleLabel, "TitleLabel");
+            this.TitleLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.TitleLabel.Name = "TitleLabel";
+            this.TitleLabel.Click += new System.EventHandler(this.TitleLabel_Click);
+            // 
+            // FormShow
+            // 
+            resources.ApplyResources(this.FormShow, "FormShow");
+            this.FormShow.Name = "FormShow";
             // 
             // button3
             // 
@@ -119,41 +149,18 @@
             this.BtnHome.UseVisualStyleBackColor = true;
             this.BtnHome.Click += new System.EventHandler(this.BtnHome_Click);
             // 
-            // PanelLogData
-            // 
-            this.PanelLogData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.PanelLogData.Controls.Add(this.Imagen);
-            this.PanelLogData.Controls.Add(this.buttonBckMenu);
-            this.PanelLogData.Controls.Add(this.labelName);
-            this.PanelLogData.Controls.Add(this.labelEmail);
-            resources.ApplyResources(this.PanelLogData, "PanelLogData");
-            this.PanelLogData.Name = "PanelLogData";
-            // 
             // Imagen
             // 
             resources.ApplyResources(this.Imagen, "Imagen");
             this.Imagen.Name = "Imagen";
             this.Imagen.TabStop = false;
             // 
-            // TitlePanel
-            // 
-            this.TitlePanel.BackColor = System.Drawing.SystemColors.Highlight;
-            this.TitlePanel.Controls.Add(this.TitleLabel);
-            resources.ApplyResources(this.TitlePanel, "TitlePanel");
-            this.TitlePanel.Name = "TitlePanel";
-            // 
-            // TitleLabel
-            // 
-            resources.ApplyResources(this.TitleLabel, "TitleLabel");
-            this.TitleLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.TitleLabel.Name = "TitleLabel";
-            this.TitleLabel.Click += new System.EventHandler(this.TitleLabel_Click);
-            // 
             // Main
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.Controls.Add(this.FormShow);
             this.Controls.Add(this.TitlePanel);
             this.Controls.Add(this.PanelSideMenu);
             this.Name = "Main";
@@ -161,9 +168,9 @@
             this.PanelSideMenu.ResumeLayout(false);
             this.PanelLogData.ResumeLayout(false);
             this.PanelLogData.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Imagen)).EndInit();
             this.TitlePanel.ResumeLayout(false);
             this.TitlePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Imagen)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -182,5 +189,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel TitlePanel;
         private System.Windows.Forms.Label TitleLabel;
+        private System.Windows.Forms.Panel FormShow;
     }
 }
