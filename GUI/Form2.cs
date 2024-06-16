@@ -32,13 +32,27 @@ namespace GUI
             random = new Random();
         }
 
-        protected override void OnResize(EventArgs e)
+        //Mantener texto centrado
+        FormWindowState LastwinState = FormWindowState.Normal;
+        
+        private void MenuLabelResize(object sender, EventArgs e)
         {
-            TitleLabel.Left = ((this.ClientSize.Width - TitleLabel.Width - PanelSideMenu.Width) / 2) ;
-
-            base.OnResize(e);
+            //cuando cambie de estado
+            if (WindowState != LastwinState)
+            {
+                LastwinState = WindowState;
+                TitleLabel.Left = ((this.ClientSize.Width - TitleLabel.Width - PanelSideMenu.Width) / 2);
+            }
         }
-        //protected override void 
+
+        //Arreglar bug cierre
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+
+            // Cerrar Form1 cuando se cierre Form2
+            form1?.Close();
+        }
 
         private async void LoadProfileImage(string imageUrl)
         {
