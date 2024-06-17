@@ -14,10 +14,10 @@ namespace GUI.Forms
     {
         private Main main;
         
-        public Home(int resto)
+        public Home(int resto, Menu form1, string name, string email, string pictureUrl)
         {
             InitializeComponent();
-            //this.main = new Main(); aca hay que pasar bien los parametros, me falto eso, por eso hay un error (TODO)
+            this.main = new Main(form1, name, email, pictureUrl); 
             ChangeStyle(resto);
         }
 
@@ -39,7 +39,7 @@ namespace GUI.Forms
         {
             int[] listaColores = ColoresIntList(resto);
 
-            this.BackColor = main.SelectThemeColor(listaColores[0]);
+            this.BackColor = main.SelectThemeColor(listaColores[5]);
 
         }
 

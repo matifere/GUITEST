@@ -37,6 +37,8 @@
             this.TitlePanel = new System.Windows.Forms.Panel();
             this.TitleLabel = new System.Windows.Forms.Label();
             this.FormShow = new System.Windows.Forms.Panel();
+            this.WelcomeLabel = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -45,6 +47,8 @@
             this.PanelSideMenu.SuspendLayout();
             this.PanelLogData.SuspendLayout();
             this.TitlePanel.SuspendLayout();
+            this.FormShow.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Imagen)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,7 +86,7 @@
             // 
             // PanelLogData
             // 
-            this.PanelLogData.BackColor = System.Drawing.Color.RoyalBlue;
+            this.PanelLogData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(55)))), ((int)(((byte)(40)))));
             this.PanelLogData.Controls.Add(this.Imagen);
             this.PanelLogData.Controls.Add(this.buttonBckMenu);
             this.PanelLogData.Controls.Add(this.labelName);
@@ -92,7 +96,7 @@
             // 
             // TitlePanel
             // 
-            this.TitlePanel.BackColor = System.Drawing.SystemColors.Highlight;
+            this.TitlePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(58)))), ((int)(((byte)(44)))));
             this.TitlePanel.Controls.Add(this.TitleLabel);
             resources.ApplyResources(this.TitlePanel, "TitlePanel");
             this.TitlePanel.Name = "TitlePanel";
@@ -106,8 +110,25 @@
             // 
             // FormShow
             // 
+            this.FormShow.Controls.Add(this.WelcomeLabel);
+            this.FormShow.Controls.Add(this.pictureBox1);
             resources.ApplyResources(this.FormShow, "FormShow");
             this.FormShow.Name = "FormShow";
+            // 
+            // WelcomeLabel
+            // 
+            resources.ApplyResources(this.WelcomeLabel, "WelcomeLabel");
+            this.WelcomeLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(74)))), ((int)(((byte)(94)))));
+            this.WelcomeLabel.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.WelcomeLabel.Name = "WelcomeLabel";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(74)))), ((int)(((byte)(94)))));
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Image = global::GUI.Properties.Resources.guitestback;
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
             // 
             // button3
             // 
@@ -170,6 +191,9 @@
             this.PanelLogData.PerformLayout();
             this.TitlePanel.ResumeLayout(false);
             this.TitlePanel.PerformLayout();
+            this.FormShow.ResumeLayout(false);
+            this.FormShow.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Imagen)).EndInit();
             this.ResumeLayout(false);
 
@@ -190,5 +214,7 @@
         private System.Windows.Forms.Panel TitlePanel;
         private System.Windows.Forms.Label TitleLabel;
         private System.Windows.Forms.Panel FormShow;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label WelcomeLabel;
     }
 }

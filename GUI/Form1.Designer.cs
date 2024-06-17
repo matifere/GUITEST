@@ -29,32 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
-            this.buttonLogout = new System.Windows.Forms.Button();
             this.labelName = new System.Windows.Forms.Label();
             this.labelEmail = new System.Windows.Forms.Label();
             this.CatPic = new System.Windows.Forms.PictureBox();
             this.Imagen = new System.Windows.Forms.PictureBox();
+            this.buttonLogout = new System.Windows.Forms.Button();
             this.buttonLogin = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.CatPic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Imagen)).BeginInit();
             this.SuspendLayout();
-            // 
-            // buttonLogout
-            // 
-            this.buttonLogout.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.buttonLogout.FlatAppearance.BorderSize = 0;
-            this.buttonLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLogout.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLogout.Image = global::GUI.Properties.Resources.right_from_bracket_solid;
-            this.buttonLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonLogout.Location = new System.Drawing.Point(89, 299);
-            this.buttonLogout.Name = "buttonLogout";
-            this.buttonLogout.Size = new System.Drawing.Size(154, 52);
-            this.buttonLogout.TabIndex = 3;
-            this.buttonLogout.Text = "Log Out";
-            this.buttonLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonLogout.UseVisualStyleBackColor = true;
-            this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
             // 
             // labelName
             // 
@@ -104,6 +87,23 @@
             this.Imagen.TabStop = false;
             this.Imagen.Click += new System.EventHandler(this.Image_Click);
             // 
+            // buttonLogout
+            // 
+            this.buttonLogout.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.buttonLogout.FlatAppearance.BorderSize = 0;
+            this.buttonLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLogout.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLogout.Image = global::GUI.Properties.Resources.right_from_bracket_solid;
+            this.buttonLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonLogout.Location = new System.Drawing.Point(89, 299);
+            this.buttonLogout.Name = "buttonLogout";
+            this.buttonLogout.Size = new System.Drawing.Size(154, 52);
+            this.buttonLogout.TabIndex = 3;
+            this.buttonLogout.Text = "Log Out";
+            this.buttonLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonLogout.UseVisualStyleBackColor = true;
+            this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
+            // 
             // buttonLogin
             // 
             this.buttonLogin.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -139,6 +139,7 @@
             this.Controls.Add(this.buttonLogin);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.MaximizeBox = false;
             this.Name = "Menu";

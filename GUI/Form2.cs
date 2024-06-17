@@ -20,7 +20,7 @@ namespace GUI
         //private Random random;
         //private int tempIndex;
         private Form activeForm;
-
+        private string globalPic;
 
         public Main(Menu form1 ,string name, string email, string pictureUrl)
         {
@@ -30,6 +30,7 @@ namespace GUI
             labelName.Text = name;
             labelEmail.Text = email;
             LoadProfileImage(pictureUrl);
+            globalPic = pictureUrl;
             //random = new Random();
         }
 
@@ -181,7 +182,7 @@ namespace GUI
 
         private void BtnHome_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.Home(0), sender, 2, 0); // cambia el primer entero para seguir dentro de la misma paleta
+            OpenChildForm(new Forms.Home(0, form1, labelName.Text, labelEmail.Text, globalPic), sender, 2, 0); // cambia el primer entero para seguir dentro de la misma paleta
         }
 
         private void button1_Click(object sender, EventArgs e)
