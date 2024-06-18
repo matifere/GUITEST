@@ -13,7 +13,7 @@ namespace GUI.Forms
     public partial class Home : Form
     {
         private Main main;
-        
+
         public Home(int resto, Main mainForm)
         {
             InitializeComponent();
@@ -21,6 +21,7 @@ namespace GUI.Forms
             ChangeStyle(resto);
         }
 
+        #region color
         private int[] ColoresIntList(int resto) //dejo en una lista todos los colores compatibles para que sea mas facil crear un estilo 
         {
 
@@ -42,7 +43,7 @@ namespace GUI.Forms
             this.BackColor = main.SelectThemeColor(listaColores[5]);
 
         }
-
+        #endregion
 
         private void label1_Click(object sender, EventArgs e)
         {

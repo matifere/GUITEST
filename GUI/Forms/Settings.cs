@@ -1,5 +1,7 @@
 ﻿//using Newtonsoft.Json;
+using Mysqlx.Session;
 using System;
+using System.Drawing.Text;
 using System.Windows.Forms;
 
 
@@ -14,9 +16,13 @@ namespace GUI.Forms
         private Button settingsbtn;
         private Button notesbtn;
         private Button databtn;
+        private Main main;
 
-        public Settings(Panel LPS, Button home, Button settings, Button notes, Button data)
+
+        public Settings(Panel LPS, Button home, Button settings, Button notes, Button data, Main mainForm, int resto)
         {
+            
+            //left panel size
             LPSize = LPS.Width;
             LP = LPS;
             
@@ -28,8 +34,35 @@ namespace GUI.Forms
 
             InitializeComponent();
             LoadSettings();
-            //ApplySettings();
+            this.main = mainForm;
+            ChangeStyle(resto);
         }
+
+        #region color
+        private int[] ColoresIntList(int resto) //dejo en una lista todos los colores compatibles para que sea mas facil crear un estilo 
+        {
+
+            int size = ThemeColor.ColorList.Count / 4;
+            int[] colorListIndex = new int[size];
+
+            for (int i = 0; i < size; i++)
+            {
+                colorListIndex[i] = main.SelectMod(i, resto);
+            }
+
+            return colorListIndex;
+        }
+
+        private void ChangeStyle(int resto)
+        {
+            int[] listaColores = ColoresIntList(resto);
+
+            this.BackColor = main.SelectThemeColor(listaColores[2]);
+            SaveLPSBtn.BackColor = main.SelectThemeColor(listaColores[2]);
+            LeftPanelSize.BackColor = main.SelectThemeColor(listaColores[1]);
+
+        }
+        #endregion
 
         public void LoadSettings()
         {

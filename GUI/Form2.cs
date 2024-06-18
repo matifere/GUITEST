@@ -221,7 +221,7 @@ namespace GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.Settings(PanelSideMenu, BtnHome, SettingsBtn, NotesBtn, DataBtn), sender, 3, 1);
+            OpenChildForm(new Forms.Settings(PanelSideMenu, BtnHome, SettingsBtn, NotesBtn, DataBtn, this, 1), sender, 0, 1);
 
 
         }
