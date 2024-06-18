@@ -33,23 +33,23 @@
             this.labelName = new System.Windows.Forms.Label();
             this.buttonBckMenu = new System.Windows.Forms.Button();
             this.PanelSideMenu = new System.Windows.Forms.Panel();
+            this.DataBtn = new System.Windows.Forms.Button();
+            this.NotesBtn = new System.Windows.Forms.Button();
+            this.SettingsBtn = new System.Windows.Forms.Button();
+            this.BtnHome = new System.Windows.Forms.Button();
             this.PanelLogData = new System.Windows.Forms.Panel();
+            this.Imagen = new System.Windows.Forms.PictureBox();
             this.TitlePanel = new System.Windows.Forms.Panel();
             this.TitleLabel = new System.Windows.Forms.Label();
             this.FormShow = new System.Windows.Forms.Panel();
             this.WelcomeLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.BtnHome = new System.Windows.Forms.Button();
-            this.Imagen = new System.Windows.Forms.PictureBox();
             this.PanelSideMenu.SuspendLayout();
             this.PanelLogData.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Imagen)).BeginInit();
             this.TitlePanel.SuspendLayout();
             this.FormShow.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Imagen)).BeginInit();
             this.SuspendLayout();
             // 
             // labelEmail
@@ -76,13 +76,53 @@
             // PanelSideMenu
             // 
             this.PanelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(64)))), ((int)(((byte)(63)))));
-            this.PanelSideMenu.Controls.Add(this.button3);
-            this.PanelSideMenu.Controls.Add(this.button2);
-            this.PanelSideMenu.Controls.Add(this.button1);
+            this.PanelSideMenu.Controls.Add(this.DataBtn);
+            this.PanelSideMenu.Controls.Add(this.NotesBtn);
+            this.PanelSideMenu.Controls.Add(this.SettingsBtn);
             this.PanelSideMenu.Controls.Add(this.BtnHome);
             this.PanelSideMenu.Controls.Add(this.PanelLogData);
             resources.ApplyResources(this.PanelSideMenu, "PanelSideMenu");
             this.PanelSideMenu.Name = "PanelSideMenu";
+            // 
+            // DataBtn
+            // 
+            resources.ApplyResources(this.DataBtn, "DataBtn");
+            this.DataBtn.FlatAppearance.BorderSize = 0;
+            this.DataBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.DataBtn.Image = global::GUI.Properties.Resources.database_solid;
+            this.DataBtn.Name = "DataBtn";
+            this.DataBtn.UseVisualStyleBackColor = true;
+            this.DataBtn.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // NotesBtn
+            // 
+            resources.ApplyResources(this.NotesBtn, "NotesBtn");
+            this.NotesBtn.FlatAppearance.BorderSize = 0;
+            this.NotesBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.NotesBtn.Image = global::GUI.Properties.Resources.clipboard_solid;
+            this.NotesBtn.Name = "NotesBtn";
+            this.NotesBtn.UseVisualStyleBackColor = true;
+            this.NotesBtn.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // SettingsBtn
+            // 
+            resources.ApplyResources(this.SettingsBtn, "SettingsBtn");
+            this.SettingsBtn.FlatAppearance.BorderSize = 0;
+            this.SettingsBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.SettingsBtn.Image = global::GUI.Properties.Resources.gear;
+            this.SettingsBtn.Name = "SettingsBtn";
+            this.SettingsBtn.UseVisualStyleBackColor = true;
+            this.SettingsBtn.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // BtnHome
+            // 
+            resources.ApplyResources(this.BtnHome, "BtnHome");
+            this.BtnHome.FlatAppearance.BorderSize = 0;
+            this.BtnHome.ForeColor = System.Drawing.SystemColors.Control;
+            this.BtnHome.Image = global::GUI.Properties.Resources.house;
+            this.BtnHome.Name = "BtnHome";
+            this.BtnHome.UseVisualStyleBackColor = true;
+            this.BtnHome.Click += new System.EventHandler(this.BtnHome_Click);
             // 
             // PanelLogData
             // 
@@ -93,6 +133,12 @@
             this.PanelLogData.Controls.Add(this.labelEmail);
             resources.ApplyResources(this.PanelLogData, "PanelLogData");
             this.PanelLogData.Name = "PanelLogData";
+            // 
+            // Imagen
+            // 
+            resources.ApplyResources(this.Imagen, "Imagen");
+            this.Imagen.Name = "Imagen";
+            this.Imagen.TabStop = false;
             // 
             // TitlePanel
             // 
@@ -130,52 +176,6 @@
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
             // 
-            // button3
-            // 
-            resources.ApplyResources(this.button3, "button3");
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.ForeColor = System.Drawing.SystemColors.Control;
-            this.button3.Image = global::GUI.Properties.Resources.database_solid;
-            this.button3.Name = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            resources.ApplyResources(this.button2, "button2");
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Image = global::GUI.Properties.Resources.clipboard_solid;
-            this.button2.Name = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Image = global::GUI.Properties.Resources.gear;
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // BtnHome
-            // 
-            resources.ApplyResources(this.BtnHome, "BtnHome");
-            this.BtnHome.FlatAppearance.BorderSize = 0;
-            this.BtnHome.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnHome.Image = global::GUI.Properties.Resources.house;
-            this.BtnHome.Name = "BtnHome";
-            this.BtnHome.UseVisualStyleBackColor = true;
-            this.BtnHome.Click += new System.EventHandler(this.BtnHome_Click);
-            // 
-            // Imagen
-            // 
-            resources.ApplyResources(this.Imagen, "Imagen");
-            this.Imagen.Name = "Imagen";
-            this.Imagen.TabStop = false;
-            // 
             // Main
             // 
             resources.ApplyResources(this, "$this");
@@ -189,12 +189,12 @@
             this.PanelSideMenu.ResumeLayout(false);
             this.PanelLogData.ResumeLayout(false);
             this.PanelLogData.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Imagen)).EndInit();
             this.TitlePanel.ResumeLayout(false);
             this.TitlePanel.PerformLayout();
             this.FormShow.ResumeLayout(false);
             this.FormShow.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Imagen)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -208,9 +208,9 @@
         private System.Windows.Forms.Panel PanelSideMenu;
         private System.Windows.Forms.Panel PanelLogData;
         private System.Windows.Forms.Button BtnHome;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button SettingsBtn;
+        private System.Windows.Forms.Button NotesBtn;
+        private System.Windows.Forms.Button DataBtn;
         private System.Windows.Forms.Panel TitlePanel;
         private System.Windows.Forms.Label TitleLabel;
         private System.Windows.Forms.Panel FormShow;

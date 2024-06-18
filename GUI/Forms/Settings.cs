@@ -1,57 +1,112 @@
 ﻿//using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Text.Json;
-using System.IO;
+
 
 namespace GUI.Forms
 {
     public partial class Settings : Form
     {
         private UserSettings userSettings;
-        public Settings()
+        private int LPSize; //tamaño del panel izq
+        private Panel LP;
+        private Button homebtn;
+        private Button settingsbtn;
+        private Button notesbtn;
+        private Button databtn;
+
+        public Settings(Panel LPS, Button home, Button settings, Button notes, Button data)
         {
+            LPSize = LPS.Width;
+            LP = LPS;
+            
+            //asigno referencia a los botones del menu
+            homebtn = home;
+            settingsbtn = settings;
+            databtn = data;
+            notesbtn = notes;
+
             InitializeComponent();
             LoadSettings();
-            ApplySettings();
+            //ApplySettings();
         }
 
-        private void LoadSettings()
+        public void LoadSettings()
         {
             userSettings = UserSettingsManager.LoadUserSettings();
         }
 
-        private void ApplySettings()
+        public void ApplySettings()
         {
-            this.Text = userSettings.UserName;
-            this.Width = userSettings.WindowWidth;
-            this.Height = userSettings.WindowHeight;
+            //this.Text = userSettings.UserName;
+            //this.Width = userSettings.WindowWidth;
+            //this.Height = userSettings.WindowHeight;
             // Aplica más configuraciones según sea necesario
+            LP.Width = userSettings.PanelWidth;
+
+            if (userSettings.PanelWidth < 150)
+            {
+                homebtn.Text = "";
+                settingsbtn.Text = "";
+                notesbtn.Text = "";
+                databtn.Text = "";
+            }
+            else
+            {
+                homebtn.Text = "Home";
+                settingsbtn.Text = "Settings";
+                notesbtn.Text = "Notes";
+                databtn.Text = "Data";
+            }
+            if (userSettings.PanelWidth < 40)
+            {
+                LP.Width = 40;
+            }
+            
         }
 
-        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        public void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            SaveSettings();
+           // SaveLPSSettings();
         }
 
-        private void SaveSettings()
+        public void SaveLPSSettings(string size)
         {
-            userSettings.UserName = this.Text;
-            userSettings.WindowWidth = this.Width;
-            userSettings.WindowHeight = this.Height;
-            // Guarda más configuraciones según sea necesario
+            //userSettings.UserName = this.Text;
+            //userSettings.WindowWidth = this.Width;
+            //userSettings.WindowHeight = this.Height;
+            try
+            {
+                userSettings.PanelWidth = Int32.Parse(size);
 
+            }
+            catch
+            {
+
+            }
             UserSettingsManager.SaveUserSettings(userSettings);
         }
 
+        private void SaveBtn_Click(object sender, EventArgs e) //save all                     
+        {
+            SaveLPSSettings(LeftPanelSize.Text);
+        }
 
+        private void ApplyBtn_Click(object sender, EventArgs e)
+        {
+            ApplySettings();
+        }
+
+        private void SaveBtn_Click_1(object sender, EventArgs e) //save lps
+        {
+            SaveLPSSettings(LeftPanelSize.Text);
+        }
+
+        private void ResetSetBtn_Click(object sender, EventArgs e)
+        {
+            userSettings.PanelWidth = 187;
+            ApplySettings();
+        }
     }
 
 }

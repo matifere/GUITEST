@@ -8,13 +8,13 @@ using System.IO;
 
 namespace GUI
 {
-    public class UserSettings
+    public class UserSettings//hay que ir agregando configuraciones segun sea necesario
     {
-        public string UserName { get; set; }
-        public string PreferredTheme { get; set; }
-        public int WindowWidth { get; set; }
-        public int WindowHeight { get; set; }
-        // Agrega más propiedades según sea necesario
+        //public string UserName { get; set; }
+        public int PanelWidth { get; set; }
+        //public int WindowWidth { get; set; }
+        //public int WindowHeight { get; set; }
+        
 
         
     }

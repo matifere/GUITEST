@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,24 +15,57 @@ namespace GUI
     public partial class Main : Form
     {
         //campos
-        private Menu form1;
+        private Menu MenuForm;
+        private UserSettings userSettings;
 
         private Button currentButton;
         //private Random random;
         //private int tempIndex;
         private Form activeForm;
+        private Settings settingsForm;
         private string globalPic;
 
         public Main(Menu form1 ,string name, string email, string pictureUrl)
         {
             InitializeComponent();
-            this.form1 = form1;
+            this.MenuForm = form1;
 
+            LoadSettings();
+            ApplySettings();
             labelName.Text = name;
             labelEmail.Text = email;
             LoadProfileImage(pictureUrl);
             globalPic = pictureUrl;
             //random = new Random();
+        }
+
+        public void LoadSettings()
+        {
+            userSettings = UserSettingsManager.LoadUserSettings();
+        }
+
+        public void ApplySettings()
+        {
+            //this.Text = userSettings.UserName;
+            //this.Width = userSettings.WindowWidth;
+            //this.Height = userSettings.WindowHeight;
+            // Aplica más configuraciones según sea necesario
+            PanelSideMenu.Width = userSettings.PanelWidth;
+
+            //dejar de mostrar texto en los botones si son muy chicos y no permitir que sean mas chicos que el icono
+            if(userSettings.PanelWidth < 150)
+            {
+                BtnHome.Text = "";
+                SettingsBtn.Text = "";
+                NotesBtn.Text = "";
+                DataBtn.Text = "";
+            }
+            if (userSettings.PanelWidth < 40)
+            {
+                PanelSideMenu.Width = 40;
+            }
+
+
         }
 
         //Mantener texto centrado
@@ -53,7 +87,7 @@ namespace GUI
             base.OnFormClosing(e);
 
             // Cerrar Form1 cuando se cierre Form2
-            form1?.Close();
+            MenuForm?.Close();
         }
 
         private async void LoadProfileImage(string imageUrl)
@@ -75,7 +109,7 @@ namespace GUI
 
         private void buttonLogout_Click(object sender, EventArgs e)
         {
-            form1?.Show();
+            MenuForm?.Show();
             this.Hide();
         }
 
@@ -182,12 +216,12 @@ namespace GUI
 
         private void BtnHome_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.Home(0, form1, labelName.Text, labelEmail.Text, globalPic), sender, 2, 0); // cambia el primer entero para seguir dentro de la misma paleta
+            OpenChildForm(new Forms.Home(0, this), sender, 2, 0); // cambia el primer entero para seguir dentro de la misma paleta
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.Settings(), sender, 3, 1);
+            OpenChildForm(new Forms.Settings(PanelSideMenu, BtnHome, SettingsBtn, NotesBtn, DataBtn), sender, 3, 1);
 
 
         }

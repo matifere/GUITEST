@@ -14,10 +14,10 @@ namespace GUI.Forms
     {
         private Main main;
         
-        public Home(int resto, Menu form1, string name, string email, string pictureUrl)
+        public Home(int resto, Main mainForm)
         {
             InitializeComponent();
-            this.main = new Main(form1, name, email, pictureUrl); 
+            this.main = mainForm; 
             ChangeStyle(resto);
         }
 
