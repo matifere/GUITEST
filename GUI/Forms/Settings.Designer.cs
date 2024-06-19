@@ -37,8 +37,11 @@
             this.PanelSave = new System.Windows.Forms.Panel();
             this.LogoBox = new System.Windows.Forms.PictureBox();
             this.settingPanelText = new System.Windows.Forms.Panel();
+            this.DefaultWinSize = new System.Windows.Forms.Label();
             this.TextBoxPanel = new System.Windows.Forms.Panel();
+            this.SelectWin = new System.Windows.Forms.ComboBox();
             this.panelsaveconfig = new System.Windows.Forms.Panel();
+            this.SaveWinSize = new System.Windows.Forms.Button();
             this.PanelSave.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoBox)).BeginInit();
             this.settingPanelText.SuspendLayout();
@@ -50,21 +53,21 @@
             // 
             this.LeftPanelSizeLabel.AutoSize = true;
             this.LeftPanelSizeLabel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LeftPanelSizeLabel.Font = new System.Drawing.Font("Unispace", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LeftPanelSizeLabel.Font = new System.Drawing.Font("Unispace", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LeftPanelSizeLabel.Location = new System.Drawing.Point(0, 40);
             this.LeftPanelSizeLabel.Name = "LeftPanelSizeLabel";
-            this.LeftPanelSizeLabel.Size = new System.Drawing.Size(238, 29);
+            this.LeftPanelSizeLabel.Size = new System.Drawing.Size(220, 25);
             this.LeftPanelSizeLabel.TabIndex = 0;
-            this.LeftPanelSizeLabel.Text = "Left panel size";
+            this.LeftPanelSizeLabel.Text = "Left panel size:";
             // 
             // LeftPanelSize
             // 
             this.LeftPanelSize.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.LeftPanelSize.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LeftPanelSize.Font = new System.Drawing.Font("Unispace", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LeftPanelSize.Font = new System.Drawing.Font("Unispace", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LeftPanelSize.Location = new System.Drawing.Point(0, 40);
             this.LeftPanelSize.Name = "LeftPanelSize";
-            this.LeftPanelSize.Size = new System.Drawing.Size(134, 26);
+            this.LeftPanelSize.Size = new System.Drawing.Size(134, 28);
             this.LeftPanelSize.TabIndex = 1;
             this.LeftPanelSize.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -98,7 +101,6 @@
             // 
             // ResetSetBtn
             // 
-            this.ResetSetBtn.BackColor = System.Drawing.SystemColors.Control;
             this.ResetSetBtn.Dock = System.Windows.Forms.DockStyle.Top;
             this.ResetSetBtn.FlatAppearance.BorderSize = 0;
             this.ResetSetBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -154,6 +156,7 @@
             // 
             // settingPanelText
             // 
+            this.settingPanelText.Controls.Add(this.DefaultWinSize);
             this.settingPanelText.Controls.Add(this.LeftPanelSizeLabel);
             this.settingPanelText.Dock = System.Windows.Forms.DockStyle.Left;
             this.settingPanelText.Location = new System.Drawing.Point(0, 0);
@@ -162,8 +165,21 @@
             this.settingPanelText.Size = new System.Drawing.Size(234, 450);
             this.settingPanelText.TabIndex = 7;
             // 
+            // DefaultWinSize
+            // 
+            this.DefaultWinSize.AutoSize = true;
+            this.DefaultWinSize.Dock = System.Windows.Forms.DockStyle.Top;
+            this.DefaultWinSize.Font = new System.Drawing.Font("Unispace", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DefaultWinSize.Location = new System.Drawing.Point(0, 65);
+            this.DefaultWinSize.Name = "DefaultWinSize";
+            this.DefaultWinSize.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.DefaultWinSize.Size = new System.Drawing.Size(209, 29);
+            this.DefaultWinSize.TabIndex = 1;
+            this.DefaultWinSize.Text = "Default window size:";
+            // 
             // TextBoxPanel
             // 
+            this.TextBoxPanel.Controls.Add(this.SelectWin);
             this.TextBoxPanel.Controls.Add(this.LeftPanelSize);
             this.TextBoxPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.TextBoxPanel.Location = new System.Drawing.Point(234, 0);
@@ -172,8 +188,24 @@
             this.TextBoxPanel.Size = new System.Drawing.Size(134, 450);
             this.TextBoxPanel.TabIndex = 8;
             // 
+            // SelectWin
+            // 
+            this.SelectWin.Dock = System.Windows.Forms.DockStyle.Top;
+            this.SelectWin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SelectWin.Font = new System.Drawing.Font("Unispace", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SelectWin.FormattingEnabled = true;
+            this.SelectWin.Items.AddRange(new object[] {
+            "Record",
+            "Maximized",
+            "Default"});
+            this.SelectWin.Location = new System.Drawing.Point(0, 68);
+            this.SelectWin.Name = "SelectWin";
+            this.SelectWin.Size = new System.Drawing.Size(134, 28);
+            this.SelectWin.TabIndex = 2;
+            // 
             // panelsaveconfig
             // 
+            this.panelsaveconfig.Controls.Add(this.SaveWinSize);
             this.panelsaveconfig.Controls.Add(this.SaveLPSBtn);
             this.panelsaveconfig.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelsaveconfig.Location = new System.Drawing.Point(368, 0);
@@ -181,6 +213,24 @@
             this.panelsaveconfig.Padding = new System.Windows.Forms.Padding(0, 40, 0, 0);
             this.panelsaveconfig.Size = new System.Drawing.Size(36, 450);
             this.panelsaveconfig.TabIndex = 9;
+            // 
+            // SaveWinSize
+            // 
+            this.SaveWinSize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.SaveWinSize.Dock = System.Windows.Forms.DockStyle.Top;
+            this.SaveWinSize.FlatAppearance.BorderSize = 0;
+            this.SaveWinSize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SaveWinSize.Font = new System.Drawing.Font("Lucida Calligraphy", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveWinSize.Image = global::GUI.Properties.Resources.miniSave;
+            this.SaveWinSize.Location = new System.Drawing.Point(0, 69);
+            this.SaveWinSize.Margin = new System.Windows.Forms.Padding(0);
+            this.SaveWinSize.Name = "SaveWinSize";
+            this.SaveWinSize.Padding = new System.Windows.Forms.Padding(1);
+            this.SaveWinSize.Size = new System.Drawing.Size(36, 29);
+            this.SaveWinSize.TabIndex = 5;
+            this.SaveWinSize.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.SaveWinSize.UseVisualStyleBackColor = true;
+            this.SaveWinSize.Click += new System.EventHandler(this.SaveWinSize_Click);
             // 
             // Settings
             // 
@@ -217,5 +267,8 @@
         private System.Windows.Forms.Panel settingPanelText;
         private System.Windows.Forms.Panel TextBoxPanel;
         private System.Windows.Forms.Panel panelsaveconfig;
+        private System.Windows.Forms.Label DefaultWinSize;
+        private System.Windows.Forms.ComboBox SelectWin;
+        private System.Windows.Forms.Button SaveWinSize;
     }
 }

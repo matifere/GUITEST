@@ -12,9 +12,9 @@ namespace GUI
     {
         //public string UserName { get; set; }
         public int PanelWidth { get; set; }
-        //public int WindowWidth { get; set; }
-        //public int WindowHeight { get; set; }
-        
+        public int WindowWidth { get; set; }
+        public int WindowHeight { get; set; }
+        public bool Maximize { get; set; }
 
         
     }

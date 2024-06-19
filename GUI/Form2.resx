@@ -375,66 +375,6 @@
   <data name="&gt;&gt;BtnHome.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;Imagen.Name" xml:space="preserve">
-    <value>Imagen</value>
-  </data>
-  <data name="&gt;&gt;Imagen.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Imagen.Parent" xml:space="preserve">
-    <value>PanelLogData</value>
-  </data>
-  <data name="&gt;&gt;Imagen.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="PanelLogData.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="PanelLogData.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="PanelLogData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 73</value>
-  </data>
-  <data name="PanelLogData.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;PanelLogData.Name" xml:space="preserve">
-    <value>PanelLogData</value>
-  </data>
-  <data name="&gt;&gt;PanelLogData.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelLogData.Parent" xml:space="preserve">
-    <value>PanelSideMenu</value>
-  </data>
-  <data name="&gt;&gt;PanelLogData.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="PanelSideMenu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="PanelSideMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="PanelSideMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 540</value>
-  </data>
-  <data name="PanelSideMenu.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;PanelSideMenu.Name" xml:space="preserve">
-    <value>PanelSideMenu</value>
-  </data>
-  <data name="&gt;&gt;PanelSideMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelSideMenu.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PanelSideMenu.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="Imagen.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAlwAAAJcCAYAAAAsHHqwAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -740,41 +680,53 @@
   <data name="&gt;&gt;Imagen.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;TitleLabel.Name" xml:space="preserve">
-    <value>TitleLabel</value>
-  </data>
-  <data name="&gt;&gt;TitleLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TitleLabel.Parent" xml:space="preserve">
-    <value>TitlePanel</value>
-  </data>
-  <data name="&gt;&gt;TitleLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="TitlePanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="PanelLogData.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="TitlePanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>187, 0</value>
+  <data name="PanelLogData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
-  <data name="TitlePanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>773, 73</value>
+  <data name="PanelLogData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 73</value>
   </data>
-  <data name="TitlePanel.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+  <data name="PanelLogData.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;TitlePanel.Name" xml:space="preserve">
-    <value>TitlePanel</value>
+  <data name="&gt;&gt;PanelLogData.Name" xml:space="preserve">
+    <value>PanelLogData</value>
   </data>
-  <data name="&gt;&gt;TitlePanel.Type" xml:space="preserve">
+  <data name="&gt;&gt;PanelLogData.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;TitlePanel.Parent" xml:space="preserve">
+  <data name="&gt;&gt;PanelLogData.Parent" xml:space="preserve">
+    <value>PanelSideMenu</value>
+  </data>
+  <data name="&gt;&gt;PanelLogData.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="PanelSideMenu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="PanelSideMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="PanelSideMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 540</value>
+  </data>
+  <data name="PanelSideMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;PanelSideMenu.Name" xml:space="preserve">
+    <value>PanelSideMenu</value>
+  </data>
+  <data name="&gt;&gt;PanelSideMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelSideMenu.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;TitlePanel.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;PanelSideMenu.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="TitleLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -818,53 +770,29 @@
   <data name="&gt;&gt;TitleLabel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;WelcomeLabel.Name" xml:space="preserve">
-    <value>WelcomeLabel</value>
+  <data name="TitlePanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
   </data>
-  <data name="&gt;&gt;WelcomeLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="TitlePanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>187, 0</value>
   </data>
-  <data name="&gt;&gt;WelcomeLabel.Parent" xml:space="preserve">
-    <value>FormShow</value>
+  <data name="TitlePanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>773, 73</value>
   </data>
-  <data name="&gt;&gt;WelcomeLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="TitlePanel.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
   </data>
-  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
-    <value>pictureBox1</value>
+  <data name="&gt;&gt;TitlePanel.Name" xml:space="preserve">
+    <value>TitlePanel</value>
   </data>
-  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
-    <value>FormShow</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="FormShow.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="FormShow.Location" type="System.Drawing.Point, System.Drawing">
-    <value>187, 73</value>
-  </data>
-  <data name="FormShow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>773, 467</value>
-  </data>
-  <data name="FormShow.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;FormShow.Name" xml:space="preserve">
-    <value>FormShow</value>
-  </data>
-  <data name="&gt;&gt;FormShow.Type" xml:space="preserve">
+  <data name="&gt;&gt;TitlePanel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;FormShow.Parent" xml:space="preserve">
+  <data name="&gt;&gt;TitlePanel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;FormShow.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;TitlePanel.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="WelcomeLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom</value>
@@ -931,6 +859,30 @@
   </data>
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="FormShow.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="FormShow.Location" type="System.Drawing.Point, System.Drawing">
+    <value>187, 73</value>
+  </data>
+  <data name="FormShow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>773, 467</value>
+  </data>
+  <data name="FormShow.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;FormShow.Name" xml:space="preserve">
+    <value>FormShow</value>
+  </data>
+  <data name="&gt;&gt;FormShow.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FormShow.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;FormShow.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

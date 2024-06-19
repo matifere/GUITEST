@@ -18,6 +18,8 @@ namespace GUI.Forms
         private Button databtn;
         private Main main;
 
+        private bool maximize = false;
+
 
         public Settings(Panel LPS, Button home, Button settings, Button notes, Button data, Main mainForm, int resto)
         {
@@ -72,8 +74,7 @@ namespace GUI.Forms
         public void ApplySettings()
         {
             //this.Text = userSettings.UserName;
-            //this.Width = userSettings.WindowWidth;
-            //this.Height = userSettings.WindowHeight;
+            
             // Aplica más configuraciones según sea necesario
             LP.Width = userSettings.PanelWidth;
 
@@ -95,7 +96,22 @@ namespace GUI.Forms
             {
                 LP.Width = 40;
             }
+
+
+            //cargar el alto y ancho
+            if (!maximize)
+            {
+                main.Width = userSettings.WindowWidth;
+                main.Height = userSettings.WindowHeight;
+                main.WindowState = FormWindowState.Normal;
+            }
+            else if(maximize)
+            {
+                main.WindowState = FormWindowState.Maximized;
+            }
             
+            
+
         }
 
         public void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -140,6 +156,48 @@ namespace GUI.Forms
             userSettings.PanelWidth = 187;
             ApplySettings();
         }
+
+        private void SaveWinSize_Click(object sender, EventArgs e)
+        /*
+         Record
+         Maximized
+         Default 976 579
+         */
+
+        {
+            if (SelectWin.Text == "Default")
+            {
+                //if(autosave)
+                //main.Width = 976;
+                //main.Height = 579;
+
+                userSettings.WindowHeight = 579;
+                userSettings.WindowWidth = 976;
+                maximize = false;
+                userSettings.Maximize = maximize;
+            }
+
+            if (SelectWin.Text == "Maximized")
+            {
+                maximize = true;
+                userSettings.Maximize = maximize;
+            }
+
+            if(SelectWin.Text == "Record")
+            {
+                maximize = false;
+                userSettings.Maximize = maximize;
+                userSettings.WindowWidth = main.Width;
+                userSettings.WindowHeight = main.Height;
+            }
+
+            else if(SelectWin.Text != "Default" || SelectWin.Text == "Maximized" || SelectWin.Text == "Record")
+            {
+                MessageBox.Show("please choose an option", "Error");
+            }
+        }
+
+        
     }
 
 }

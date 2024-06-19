@@ -24,12 +24,15 @@ namespace GUI
         private Form activeForm;
         private Settings settingsForm;
         private string globalPic;
+        private Form closeChild;
+        private Color mainTitleColor;
+        private Color UserColor;
 
         public Main(Menu form1 ,string name, string email, string pictureUrl)
         {
             InitializeComponent();
             this.MenuForm = form1;
-
+            
             LoadSettings();
             ApplySettings();
             labelName.Text = name;
@@ -37,6 +40,9 @@ namespace GUI
             LoadProfileImage(pictureUrl);
             globalPic = pictureUrl;
             //random = new Random();
+
+            mainTitleColor = TitlePanel.BackColor;
+            UserColor = PanelLogData.BackColor;
         }
 
         public void LoadSettings()
@@ -184,6 +190,7 @@ namespace GUI
             childForm.BringToFront();
             childForm.Show(); //muestro el form en el panel
             TitleLabel.Text = childForm.Text; //cambiar el nombre del titulo (el del panel de arriba)
+            closeChild = childForm;
         }
 
         #region nonuse
@@ -242,6 +249,29 @@ namespace GUI
         private void TitleLabel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //cierra la ventana cuando se preciona esc
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Escape)
+            {
+                if(closeChild != null)
+                {
+                    closeChild.Close();
+                    PanelLogData.BackColor = UserColor;
+                    TitlePanel.BackColor = mainTitleColor;
+                    TitleLabel.Text = "GUITEST";
+                }
+                return true;
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
         }
     }
 }
