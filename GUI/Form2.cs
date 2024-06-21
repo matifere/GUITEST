@@ -32,9 +32,9 @@ namespace GUI
         {
             InitializeComponent();
             this.MenuForm = form1;
-            
             LoadSettings();
             ApplySettings();
+            
             labelName.Text = name;
             labelEmail.Text = email;
             LoadProfileImage(pictureUrl);
@@ -52,6 +52,7 @@ namespace GUI
 
         public void ApplySettings()
         {
+            bool maximize = userSettings.Maximize;
             //this.Text = userSettings.UserName;
             //this.Width = userSettings.WindowWidth;
             //this.Height = userSettings.WindowHeight;
@@ -71,7 +72,17 @@ namespace GUI
                 PanelSideMenu.Width = 40;
             }
 
-
+            //cargar el alto y ancho
+            if (!maximize && userSettings.WindowHeight >= 300 && userSettings.WindowHeight >= 300)
+            {
+                this.Width = userSettings.WindowWidth;
+                this.Height = userSettings.WindowHeight;
+                this.WindowState = FormWindowState.Normal;
+            }
+            else if (maximize)
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
         }
 
         //Mantener texto centrado
@@ -235,7 +246,7 @@ namespace GUI
 
         private void button2_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.Notes(), sender, 3, 2);
+            OpenChildForm(new Forms.Notes( this, 2), sender, 3, 2);
 
 
 

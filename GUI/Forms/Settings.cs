@@ -19,6 +19,7 @@ namespace GUI.Forms
         private Main main;
 
         private bool maximize = false;
+        private bool autoSave = false;
 
 
         public Settings(Panel LPS, Button home, Button settings, Button notes, Button data, Main mainForm, int resto)
@@ -27,7 +28,8 @@ namespace GUI.Forms
             //left panel size
             LPSize = LPS.Width;
             LP = LPS;
-            
+
+
             //asigno referencia a los botones del menu
             homebtn = home;
             settingsbtn = settings;
@@ -38,6 +40,20 @@ namespace GUI.Forms
             LoadSettings();
             this.main = mainForm;
             ChangeStyle(resto);
+
+            //auto save
+            if(userSettings.AutoSaveAndApply != null)
+            {
+
+                CbSavAplAuto.Checked = userSettings.AutoSaveAndApply;
+                UserSettingsManager.SaveUserSettings(userSettings);
+            }
+            else
+            {
+                userSettings.AutoSaveAndApply = autoSave;
+                UserSettingsManager.SaveUserSettings(userSettings);
+
+            }
         }
 
         #region color
@@ -99,7 +115,7 @@ namespace GUI.Forms
 
 
             //cargar el alto y ancho
-            if (!maximize)
+            if (!maximize && userSettings.WindowHeight >= 300 && userSettings.WindowHeight >= 300)
             {
                 main.Width = userSettings.WindowWidth;
                 main.Height = userSettings.WindowHeight;
@@ -133,7 +149,12 @@ namespace GUI.Forms
             {
 
             }
-            UserSettingsManager.SaveUserSettings(userSettings);
+            UserSettingsManager.SaveUserSettings(userSettings); //guardar\
+
+            if (userSettings.AutoSaveAndApply)
+            {
+                ApplySettings();
+            }
         }
 
         private void SaveBtn_Click(object sender, EventArgs e) //save all                     
@@ -154,6 +175,10 @@ namespace GUI.Forms
         private void ResetSetBtn_Click(object sender, EventArgs e)
         {
             userSettings.PanelWidth = 187;
+            userSettings.WindowHeight = 579;
+            userSettings.WindowWidth = 976;
+            maximize = false;
+            userSettings.Maximize = maximize;
             ApplySettings();
         }
 
@@ -177,13 +202,13 @@ namespace GUI.Forms
                 userSettings.Maximize = maximize;
             }
 
-            if (SelectWin.Text == "Maximized")
+            else if (SelectWin.Text == "Maximized")
             {
                 maximize = true;
                 userSettings.Maximize = maximize;
             }
 
-            if(SelectWin.Text == "Record")
+            else if(SelectWin.Text == "Record")
             {
                 maximize = false;
                 userSettings.Maximize = maximize;
@@ -195,9 +220,20 @@ namespace GUI.Forms
             {
                 MessageBox.Show("please choose an option", "Error");
             }
+            UserSettingsManager.SaveUserSettings(userSettings);
+
+            if (userSettings.AutoSaveAndApply)
+            {
+                ApplySettings();
+            }
+
         }
 
-        
+        private void CbSavAplAuto_CheckedChanged(object sender, EventArgs e)
+        {
+            userSettings.AutoSaveAndApply = CbSavAplAuto.Checked;
+            UserSettingsManager.SaveUserSettings(userSettings);
+        }
     }
 
 }

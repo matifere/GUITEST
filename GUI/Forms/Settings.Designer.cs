@@ -42,6 +42,8 @@
             this.SelectWin = new System.Windows.Forms.ComboBox();
             this.panelsaveconfig = new System.Windows.Forms.Panel();
             this.SaveWinSize = new System.Windows.Forms.Button();
+            this.lbAutoApply = new System.Windows.Forms.Label();
+            this.CbSavAplAuto = new System.Windows.Forms.CheckBox();
             this.PanelSave.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoBox)).BeginInit();
             this.settingPanelText.SuspendLayout();
@@ -156,13 +158,14 @@
             // 
             // settingPanelText
             // 
+            this.settingPanelText.Controls.Add(this.lbAutoApply);
             this.settingPanelText.Controls.Add(this.DefaultWinSize);
             this.settingPanelText.Controls.Add(this.LeftPanelSizeLabel);
             this.settingPanelText.Dock = System.Windows.Forms.DockStyle.Left;
             this.settingPanelText.Location = new System.Drawing.Point(0, 0);
             this.settingPanelText.Name = "settingPanelText";
             this.settingPanelText.Padding = new System.Windows.Forms.Padding(0, 40, 0, 0);
-            this.settingPanelText.Size = new System.Drawing.Size(234, 450);
+            this.settingPanelText.Size = new System.Drawing.Size(297, 450);
             this.settingPanelText.TabIndex = 7;
             // 
             // DefaultWinSize
@@ -179,10 +182,11 @@
             // 
             // TextBoxPanel
             // 
+            this.TextBoxPanel.Controls.Add(this.CbSavAplAuto);
             this.TextBoxPanel.Controls.Add(this.SelectWin);
             this.TextBoxPanel.Controls.Add(this.LeftPanelSize);
             this.TextBoxPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.TextBoxPanel.Location = new System.Drawing.Point(234, 0);
+            this.TextBoxPanel.Location = new System.Drawing.Point(297, 0);
             this.TextBoxPanel.Name = "TextBoxPanel";
             this.TextBoxPanel.Padding = new System.Windows.Forms.Padding(0, 40, 0, 0);
             this.TextBoxPanel.Size = new System.Drawing.Size(134, 450);
@@ -208,7 +212,7 @@
             this.panelsaveconfig.Controls.Add(this.SaveWinSize);
             this.panelsaveconfig.Controls.Add(this.SaveLPSBtn);
             this.panelsaveconfig.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelsaveconfig.Location = new System.Drawing.Point(368, 0);
+            this.panelsaveconfig.Location = new System.Drawing.Point(431, 0);
             this.panelsaveconfig.Name = "panelsaveconfig";
             this.panelsaveconfig.Padding = new System.Windows.Forms.Padding(0, 40, 0, 0);
             this.panelsaveconfig.Size = new System.Drawing.Size(36, 450);
@@ -231,6 +235,33 @@
             this.SaveWinSize.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.SaveWinSize.UseVisualStyleBackColor = true;
             this.SaveWinSize.Click += new System.EventHandler(this.SaveWinSize_Click);
+            // 
+            // lbAutoApply
+            // 
+            this.lbAutoApply.AutoSize = true;
+            this.lbAutoApply.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbAutoApply.Font = new System.Drawing.Font("Unispace", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAutoApply.Location = new System.Drawing.Point(0, 94);
+            this.lbAutoApply.Name = "lbAutoApply";
+            this.lbAutoApply.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.lbAutoApply.Size = new System.Drawing.Size(299, 29);
+            this.lbAutoApply.TabIndex = 2;
+            this.lbAutoApply.Text = "save and apply automatically:";
+            // 
+            // CbSavAplAuto
+            // 
+            this.CbSavAplAuto.AutoSize = true;
+            this.CbSavAplAuto.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CbSavAplAuto.Dock = System.Windows.Forms.DockStyle.Top;
+            this.CbSavAplAuto.FlatAppearance.BorderSize = 0;
+            this.CbSavAplAuto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CbSavAplAuto.Location = new System.Drawing.Point(0, 96);
+            this.CbSavAplAuto.MinimumSize = new System.Drawing.Size(50, 25);
+            this.CbSavAplAuto.Name = "CbSavAplAuto";
+            this.CbSavAplAuto.Size = new System.Drawing.Size(134, 25);
+            this.CbSavAplAuto.TabIndex = 3;
+            this.CbSavAplAuto.UseVisualStyleBackColor = true;
+            this.CbSavAplAuto.CheckedChanged += new System.EventHandler(this.CbSavAplAuto_CheckedChanged);
             // 
             // Settings
             // 
@@ -270,5 +301,7 @@
         private System.Windows.Forms.Label DefaultWinSize;
         private System.Windows.Forms.ComboBox SelectWin;
         private System.Windows.Forms.Button SaveWinSize;
+        private System.Windows.Forms.Label lbAutoApply;
+        private System.Windows.Forms.CheckBox CbSavAplAuto;
     }
 }
