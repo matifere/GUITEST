@@ -5,18 +5,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Google.Apis.Auth.OAuth2;
 using Google.Apis.Oauth2.v2;
-using Google.Apis.Plus.v1;
-using Google.Apis.Plus.v1.Data;
 using Google.Apis.Services;
 using Google.Apis.Util.Store;
 using Google.Cloud.Firestore;
 using System.Net.Http;
 using System.Drawing;
-using static Google.Rpc.Context.AttributeContext.Types;
-using System.Security.Cryptography.X509Certificates;
 using Svg;
 using System.IO;
-using System.Diagnostics;
 
 namespace GUI
 {
@@ -153,7 +148,7 @@ namespace GUI
                     // Guardar información del usuario en Firestore
                     await SaveUserToFirestore(userInfo);
 
-                    Main form2 = new Main(this, userInfo.Name, userInfo.Email, userInfo.Picture);
+                    Main form2 = new Main(this, userInfo.Name, userInfo.Email, userInfo.Picture, userInfo.Id);
                     form2.Show();
                     this.Hide();
                 }
@@ -174,9 +169,9 @@ namespace GUI
 
         private async Task SaveUserToFirestore(Google.Apis.Oauth2.v2.Data.Userinfo userInfo)
         {
-            CollectionReference usersRef = firestoreDb.Collection("users");
-            DocumentReference docRef = usersRef.Document(userInfo.Id);
-            Dictionary<string, object> user = new Dictionary<string, object>
+            CollectionReference usersRef = firestoreDb.Collection("users"); //esto vendria a ser como una carpeta 
+            DocumentReference docRef = usersRef.Document(userInfo.Id); //dentro de esa carpeta guardo el id
+            Dictionary<string, object> user = new Dictionary<string, object> //creo un diccionario para el usuario
             {
                 { "Name", userInfo.Name },
                 { "Email", userInfo.Email },

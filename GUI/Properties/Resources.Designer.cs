@@ -143,6 +143,16 @@ namespace GUI.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_trash_can_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-trash-can-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap LogoGuiTest {
             get {
                 object obj = ResourceManager.GetObject("LogoGuiTest", resourceCulture);

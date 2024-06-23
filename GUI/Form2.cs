@@ -1,4 +1,6 @@
 ﻿using GUI.Forms;
+using MaterialSkin;
+using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +20,7 @@ namespace GUI
         private Menu MenuForm;
         private UserSettings userSettings;
 
+
         private Button currentButton;
         //private Random random;
         //private int tempIndex;
@@ -27,9 +30,11 @@ namespace GUI
         private Form closeChild;
         private Color mainTitleColor;
         private Color UserColor;
+        private string UserId;
 
-        public Main(Menu form1 ,string name, string email, string pictureUrl)
+        public Main(Menu form1 ,string name, string email, string pictureUrl, string userId)
         {
+            UserId = userId;
             InitializeComponent();
             this.MenuForm = form1;
             LoadSettings();
@@ -40,6 +45,7 @@ namespace GUI
             LoadProfileImage(pictureUrl);
             globalPic = pictureUrl;
             //random = new Random();
+
 
             mainTitleColor = TitlePanel.BackColor;
             UserColor = PanelLogData.BackColor;
@@ -254,7 +260,7 @@ namespace GUI
 
         private void button3_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.Data(), sender, 3, 3);
+            OpenChildForm(new Forms.Data(UserId), sender, 3, 3);
         }
 
         private void TitleLabel_Click(object sender, EventArgs e)

@@ -37,13 +37,13 @@
             this.PanelSave = new System.Windows.Forms.Panel();
             this.LogoBox = new System.Windows.Forms.PictureBox();
             this.settingPanelText = new System.Windows.Forms.Panel();
+            this.lbAutoApply = new System.Windows.Forms.Label();
             this.DefaultWinSize = new System.Windows.Forms.Label();
             this.TextBoxPanel = new System.Windows.Forms.Panel();
+            this.CbSavAplAuto = new System.Windows.Forms.CheckBox();
             this.SelectWin = new System.Windows.Forms.ComboBox();
             this.panelsaveconfig = new System.Windows.Forms.Panel();
             this.SaveWinSize = new System.Windows.Forms.Button();
-            this.lbAutoApply = new System.Windows.Forms.Label();
-            this.CbSavAplAuto = new System.Windows.Forms.CheckBox();
             this.PanelSave.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoBox)).BeginInit();
             this.settingPanelText.SuspendLayout();
@@ -168,6 +168,18 @@
             this.settingPanelText.Size = new System.Drawing.Size(297, 450);
             this.settingPanelText.TabIndex = 7;
             // 
+            // lbAutoApply
+            // 
+            this.lbAutoApply.AutoSize = true;
+            this.lbAutoApply.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbAutoApply.Font = new System.Drawing.Font("Unispace", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAutoApply.Location = new System.Drawing.Point(0, 94);
+            this.lbAutoApply.Name = "lbAutoApply";
+            this.lbAutoApply.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.lbAutoApply.Size = new System.Drawing.Size(299, 29);
+            this.lbAutoApply.TabIndex = 2;
+            this.lbAutoApply.Text = "save and apply automatically:";
+            // 
             // DefaultWinSize
             // 
             this.DefaultWinSize.AutoSize = true;
@@ -191,6 +203,21 @@
             this.TextBoxPanel.Padding = new System.Windows.Forms.Padding(0, 40, 0, 0);
             this.TextBoxPanel.Size = new System.Drawing.Size(134, 450);
             this.TextBoxPanel.TabIndex = 8;
+            // 
+            // CbSavAplAuto
+            // 
+            this.CbSavAplAuto.AutoSize = true;
+            this.CbSavAplAuto.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CbSavAplAuto.Dock = System.Windows.Forms.DockStyle.Top;
+            this.CbSavAplAuto.FlatAppearance.BorderSize = 0;
+            this.CbSavAplAuto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CbSavAplAuto.Location = new System.Drawing.Point(0, 96);
+            this.CbSavAplAuto.MinimumSize = new System.Drawing.Size(50, 25);
+            this.CbSavAplAuto.Name = "CbSavAplAuto";
+            this.CbSavAplAuto.Size = new System.Drawing.Size(134, 25);
+            this.CbSavAplAuto.TabIndex = 3;
+            this.CbSavAplAuto.UseVisualStyleBackColor = true;
+            this.CbSavAplAuto.CheckedChanged += new System.EventHandler(this.CbSavAplAuto_CheckedChanged);
             // 
             // SelectWin
             // 
@@ -235,33 +262,6 @@
             this.SaveWinSize.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.SaveWinSize.UseVisualStyleBackColor = true;
             this.SaveWinSize.Click += new System.EventHandler(this.SaveWinSize_Click);
-            // 
-            // lbAutoApply
-            // 
-            this.lbAutoApply.AutoSize = true;
-            this.lbAutoApply.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lbAutoApply.Font = new System.Drawing.Font("Unispace", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAutoApply.Location = new System.Drawing.Point(0, 94);
-            this.lbAutoApply.Name = "lbAutoApply";
-            this.lbAutoApply.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lbAutoApply.Size = new System.Drawing.Size(299, 29);
-            this.lbAutoApply.TabIndex = 2;
-            this.lbAutoApply.Text = "save and apply automatically:";
-            // 
-            // CbSavAplAuto
-            // 
-            this.CbSavAplAuto.AutoSize = true;
-            this.CbSavAplAuto.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.CbSavAplAuto.Dock = System.Windows.Forms.DockStyle.Top;
-            this.CbSavAplAuto.FlatAppearance.BorderSize = 0;
-            this.CbSavAplAuto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CbSavAplAuto.Location = new System.Drawing.Point(0, 96);
-            this.CbSavAplAuto.MinimumSize = new System.Drawing.Size(50, 25);
-            this.CbSavAplAuto.Name = "CbSavAplAuto";
-            this.CbSavAplAuto.Size = new System.Drawing.Size(134, 25);
-            this.CbSavAplAuto.TabIndex = 3;
-            this.CbSavAplAuto.UseVisualStyleBackColor = true;
-            this.CbSavAplAuto.CheckedChanged += new System.EventHandler(this.CbSavAplAuto_CheckedChanged);
             // 
             // Settings
             // 
